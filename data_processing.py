@@ -1,9 +1,11 @@
 from datetime import datetime
 
-# Função para processar a string de uso de aplicativos
+# The ADB`s input is a string 
+
+# Processing apps_usage's string 
 def process_app_usage(output):
     app_events = []
-    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Timestamp atual
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Current Timestamp 
 
     for line in output.splitlines():
         if "time=" in line and "type=" in line and "package=" in line:
@@ -14,7 +16,7 @@ def process_app_usage(output):
                 package_name = next((p.split('=')[1] for p in parts if p.startswith("package=")), None)
                 if timestamp and event_type and package_name:
                     app_events.append({
-                        "datetime": current_time,
+                        "datetime": current_time,   #interest items 
                         "timestamp": timestamp,
                         "event_type": event_type,
                         "package_name": package_name
@@ -22,9 +24,9 @@ def process_app_usage(output):
             except Exception as e:
                 print(f"Erro ao processar linha: {line}\nDetalhes: {e}")
                 continue
-    return app_events
+    return app_events 
 
-# Função para processar a string da bateria e transformá-la em um dicionário
+# info battery: {String to Dict} 
 def parse_battery_status(output):
     status = {"timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
     keys_of_interest = [
@@ -37,10 +39,10 @@ def parse_battery_status(output):
         "FEATURE_WIRELESS_FAST_CHARGER_CONTROL", "mWasUsedWirelessFastChargerPreviously",
         "mWirelessFastChargingSettingsEnable"
     ]
-    for line in output.splitlines():
+    for line in output.splitlines(): 
         for key in keys_of_interest:
             if key in line:
                 parts = line.split(":")
                 if len(parts) == 2:
                     status[key] = parts[1].strip()
-    return status
+    return status 
