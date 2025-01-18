@@ -38,11 +38,11 @@ Features
 
 4. Modular Architecture
 
-      adb_operations.py: Handles all interactions with ADB.
+      adb_utils.py: Handles all interactions with ADB.
       
       data_processing.py: Processes raw data from ADB outputs.
       
-      file_operations.py: Handles data storage in CSV format.
+      save_utils.py: Handles data storage in CSV format.
       
       main.py: Manages the API and orchestrates other modules.
 
