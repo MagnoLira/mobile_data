@@ -1,0 +1,19 @@
+import os
+import pandas as pd
+import csv
+
+# Função para salvar os dados em CSV usando pandas
+def save_to_csv(filename, data, fieldnames=None):
+    os.makedirs(os.path.dirname(filename), exist_ok=True)  # Garante que o diretório existe
+    if isinstance(data, list) and fieldnames:
+        with open(filename, mode='a', newline='') as file:
+            writer = csv.DictWriter(file, fieldnames=fieldnames)
+            if file.tell() == 0:
+                writer.writeheader()
+            writer.writerows(data)
+    elif isinstance(data, dict):
+        df = pd.DataFrame([data])  # Cria um DataFrame com uma única linha
+        if not os.path.exists(filename):
+            df.to_csv(filename, index=False, mode='w', encoding='utf-8')
+        else:
+            df.to_csv(filename, index=False, mode='a', header=False, encoding='utf-8')
