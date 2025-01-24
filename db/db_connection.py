@@ -39,12 +39,4 @@ class DBConnection:
             self.connect()
         return self.connection
 
-# Usage example
-if __name__ == "__main__":
-    db = DBConnection(user="hr", password="hr", dsn="localhost:1521/XEPDB1")
-    try:
-        db.connect()
-        connection = db.get_connection()
-        # Perform database operations here...
-    finally:
-        db.close()
+
