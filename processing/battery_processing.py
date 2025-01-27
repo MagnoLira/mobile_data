@@ -5,7 +5,7 @@ from datetime import datetime
 
 def get_keys_of_interest():
     """
-    Retorna uma lista de chaves relevantes para o status da bateria.
+    Revelevants columns to get battery data 
     """
     return [
         "AC powered", "USB powered", "Wireless powered", "Dock powered",
@@ -20,22 +20,9 @@ def get_keys_of_interest():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 def parse_battery_status(output):
     """
-    Processa a saída do status da bateria do ADB em um dicionário contendo os dados relevantes.
+    str --> dict: get the data based on the keys in the get_keys_of_interest
     """
     status = {"timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
     keys_of_interest = get_keys_of_interest()

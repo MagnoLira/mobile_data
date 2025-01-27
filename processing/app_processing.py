@@ -13,21 +13,9 @@ def extract_value(parts, key):
     return next((p.split('=')[1].replace('"', '') for p in parts if p.startswith(key)), None)
 
 
-
-
-
-
-
-
-
-
-
-
-
 def process_app_usage(output):
     """
-    Processa a saída de uso de aplicativos do ADB em uma lista de dicionários.
-    Cada dicionário contém informações sobre o uso do aplicativo.
+    Process the list of output in dict
     """
     app_events = []
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Current Timestamp 
