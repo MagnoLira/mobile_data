@@ -118,7 +118,8 @@ def process_app_raw_to_silver():
 
 if __name__ == "__main__":
     print("Initializing process in Silver layer")
+    print('Battery process')
     process_battery_raw_to_silver()
-    #print("Starting apps processes")
-    #process_app_raw_to_silver()
+    print("Starting apps processes")
+    process_app_raw_to_silver()
     print("Process in silver layer is concluded!")
