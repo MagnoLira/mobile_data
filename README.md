@@ -39,34 +39,34 @@ Features
 
 The project follows a structured and scalable architecture:
 
-project/
-├── adb/
-│   ├── __init__.py          # Global imports for the ADB package.
-│   ├── battery_utils.py     # Functions for battery monitoring.
-│   ├── app_usage_utils.py   # Functions for app usage tracking.
-│   ├── adb_utils.py         # General ADB interaction commands.
-├── processing/
-│   ├── __init__.py          # Global imports for processing.
-│   ├── battery_processing.py  # Processing battery data.
-│   ├── app_usage_processing.py # Processing app usage data.
-├── db/
-│   ├── __init__.py          # General database configurations.
-│   ├── credentials.py       # Manages database access credentials.
-│   ├── landing_layer.py     # Functions for the landing layer (raw data).
-│   ├── silver_layer.py      # Functions for the silver layer (processed data).
-│   ├── gold_layer.py        # Functions for the gold layer (analytical data).
-│   ├── db_utils.py          # Utility functions for database connections and transactions.
-├── utils/
-│   ├── __init__.py          # Global imports for utilities.
-│   ├── logging.py           # Logging configuration and management.
-│   ├── validation.py        # Generic validations and checks.
-├── api/
-│   ├── __init__.py          # API configurations.
-│   ├── endpoints.py         # Defines API endpoints (FastAPI).
-├── main.py                  # Entry point to start the application and connect modules.
-├── requirements.txt         # Project dependencies.
-├── .gitignore               # Files and directories ignored by Git.
-└── README.md                # Project documentation.
+      project/
+      ├── adb/
+      │   ├── __init__.py          # Global imports for the ADB package.
+      │   ├── battery_utils.py     # Functions for battery monitoring.
+      │   ├── app_usage_utils.py   # Functions for app usage tracking.
+      │   ├── adb_utils.py         # General ADB interaction commands.
+      ├── processing/
+      │   ├── __init__.py          # Global imports for processing.
+      │   ├── battery_processing.py  # Processing battery data.
+      │   ├── app_usage_processing.py # Processing app usage data.
+      ├── db/
+      │   ├── __init__.py          # General database configurations.
+      │   ├── credentials.py       # Manages database access credentials.
+      │   ├── landing_layer.py     # Functions for the landing layer (raw data).
+      │   ├── silver_layer.py      # Functions for the silver layer (processed data).
+      │   ├── gold_layer.py        # Functions for the gold layer (analytical data).
+      │   ├── db_utils.py          # Utility functions for database connections and transactions.
+      ├── utils/
+      │   ├── __init__.py          # Global imports for utilities.
+      │   ├── logging.py           # Logging configuration and management.
+      │   ├── validation.py        # Generic validations and checks.
+      ├── api/
+      │   ├── __init__.py          # API configurations.
+      │   ├── endpoints.py         # Defines API endpoints (FastAPI).
+      ├── main.py                  # Entry point to start the application and connect modules.
+      ├── requirements.txt         # Project dependencies.
+      ├── .gitignore               # Files and directories ignored by Git.
+      └── README.md                # Project documentation.
 
 5. Database Storage
 
