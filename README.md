@@ -56,10 +56,6 @@ The project follows a structured and scalable architecture:
       │   ├── silver_layer.py      # Functions for the silver layer (processed data).
       │   ├── gold_layer.py        # Functions for the gold layer (analytical data).
       │   ├── db_utils.py          # Utility functions for database connections and transactions.
-      ├── utils/
-      │   ├── __init__.py          # Global imports for utilities.
-      │   ├── logging.py           # Logging configuration and management.
-      │   ├── validation.py        # Generic validations and checks.
       ├── api/
       │   ├── __init__.py          # API configurations.
       │   ├── endpoints.py         # Defines API endpoints (FastAPI).
