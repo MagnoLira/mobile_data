@@ -1,0 +1,13 @@
+# Logs
+*.log
+
+# CSV files
+*.csv
+
+# Python bytecode
+*.pyc
+__pycache__/
+
+# Test artifacts
+*.txt
+*.py
