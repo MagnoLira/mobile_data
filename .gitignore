@@ -10,4 +10,5 @@ __pycache__/
 
 # Test artifacts
 *.txt
-*.py
+apps_usage.py
+teste.py
