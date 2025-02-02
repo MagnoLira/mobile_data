@@ -5,18 +5,17 @@ from db.db_connection import DBConnection
 def insert_gold_layer():
     db = DBConnection(user="hr", password="hr", dsn="localhost:1521/XEPDB1")
     try:
-        # Conectar ao banco de dados
         connection = db.get_connection()
         cursor = connection.cursor()
 
-        # Obter a maior data já inserida na Gold Layer
+        # Get the data recent insertion into the table
         cursor.execute("SELECT MAX(ds) FROM GOLD_APP_USAGE")
         max_ds = cursor.fetchone()[0]
 
-        # Definir filtro de data para pegar apenas os dados novos
+        # only new data
         filter_date_condition = f"WHERE datetime > '{max_ds}'" if max_ds else ""
 
-        # Consulta para inserir os dados na Gold Layer
+        # structuring to insert
         insert_query = f"""
         INSERT INTO GOLD_APP_USAGE (
             nome_limpo,
@@ -102,16 +101,16 @@ def insert_gold_layer():
         ON CONFLICT (nome_limpo, datetime) DO NOTHING;
         """
 
-        # Executar a consulta de inserção
+        # Insert into gold_layer table
         cursor.execute(insert_query)
-        conn.commit()
+        connection.commit()
 
         print(f"Inserção concluída com sucesso! Dados novos foram adicionados.")
 
-    except psycopg2.Error as e:
+    except cx_Oracle.Error as e:
         print(f"Erro ao executar a consulta: {e}")
     finally:
-        # Fechar a conexão com o banco
-        if conn:
+        # Close db connection
+        if connection:
             cursor.close()
-            conn.close()
+            connection.close()
