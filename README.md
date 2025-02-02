@@ -50,12 +50,13 @@ The project follows a structured and scalable architecture:
       │   ├── battery_processing.py  # Processing battery data.
       │   ├── app_usage_processing.py # Processing app usage data.
       ├── db/
-      │   ├── __init__.py          # General database configurations.
-      │   ├── credentials.py       # Manages database access credentials.
-      │   ├── landing_layer.py     # Functions for the landing layer (raw data).
-      │   ├── silver_layer.py      # Functions for the silver layer (processed data).
-      │   ├── gold_layer.py        # Functions for the gold layer (analytical data).
-      │   ├── db_utils.py          # Utility functions for database connections and transactions.
+      │   ├── __init__.py           # Empty file
+      │   ├── db_connection.py            # Credentials and connection with database
+      │   ├── db_operations_landing_layer.py     # Functions for the landing layer (raw data).
+      │   ├── db_operations_silver_layer.py      # Functions for the silver layer (processed data).
+      │   ├── gold_layer.py        # Create_table in gold layer.
+      │   ├── raw_layer.sql        # Create_table in landing/raw layer 
+      |   ├── silver_layer.sql     # Create_table in silver layer.
       ├── api/
       │   ├── __init__.py          # API configurations.
       │   ├── endpoints.py         # Defines API endpoints (FastAPI).
