@@ -102,5 +102,14 @@ System Health
 
 
 
+# Diagram
+
+![Project diagram and data flow](image.png)
+
+
+
+
+
+
 
 
